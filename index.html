@@ -36,7 +36,7 @@
 	left: 0px;
 }
 
-	body {
+	#page-wrap {
 	background: url(./Accelerometer_image_1.png) no-repeat scroll center top transparent;
 	}
 	</style>
@@ -120,6 +120,7 @@ if (window.DeviceMotionEvent==undefined) {
 		vx = vx + ax;
 
 		var ball = document.getElementById("ball");
+		var pagewrap = document.getElementById("page-wrap");
 		y = parseInt(y + vy * vMultiplier);
 		x = parseInt(x + vx * vMultiplier);
 		
@@ -128,8 +129,8 @@ if (window.DeviceMotionEvent==undefined) {
 		if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
 		if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
 		
-		body.style.top = y + "px";
-		body.style.left = x + "px";
+		pagewrap.style.top = y + "px";
+		pagewrap.style.left = x + "px";
 	}, delay);
 } 
 
