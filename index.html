@@ -68,6 +68,18 @@
 	
 </body>
 <script>
+
+    function setToCenterOfParent(element, parent, ignoreWidth, ignoreHeight){
+        parentWidth = $(parent).width();
+        parentHeight = $(parent).height();  
+        elementWidth = $(element).width();
+        elementHeight = $(element).height();
+        if(!ignoreWidth)
+            $(element).css('left', parentWidth/2 - elementWidth/2);
+        if(!ignoreHeight)
+            $(element).css('top', parentHeight/2 - elementHeight/2);
+    }
+
 /*
 Curious about the code? Great! Welcome to this code ;)
 Feel free to copy and use this code
@@ -116,6 +128,7 @@ if (window.DeviceMotionEvent==undefined) {
 		
 		ball.style.top = y + "px";
 		ball.style.left = x + "px";
+		setToCenterOfParent(ball, document.body, false ,false);
 	}, delay);
 } 
 
