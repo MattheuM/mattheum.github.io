@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	
+	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
 <script src="http://debug.phonegap.com/target/target-script-min.js#accelerometer"></script>
 	<title>Horizontally Scrolling Site from CSS-Tricks</title>
 	
@@ -68,7 +68,9 @@
 	
 </body>
 <script>
-
+$('body').animate({
+        scrollTop: $(this).offset().top + $(this).height() / 2
+    }, 1000);
     function setToCenterOfParent(element, parent, ignoreWidth, ignoreHeight){
         parentWidth = $(parent).width();
         parentHeight = $(parent).height();  
@@ -104,7 +106,7 @@ var vMultiplier = 0.01;
 
 if (window.DeviceMotionEvent==undefined) {
 	//document.getElementById("no").style.display="block";
-	//document.getElementById("yes").style.display="none";
+	//document.getElementById("yes").stylesheete.display="none";
 
 } else {
 	window.ondevicemotion = function(event) {
@@ -126,9 +128,8 @@ if (window.DeviceMotionEvent==undefined) {
 		if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
 		if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
 		
-		ball.style.top = y + "px";
-		ball.style.left = x + "px";
-		setToCenterOfParent(ball, document.body, false ,false);
+		body.style.top = y + "px";
+		body.style.left = x + "px";
 	}, delay);
 } 
 
