@@ -4,83 +4,42 @@
 <head>
 	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
 <script src="http://debug.phonegap.com/target/target-script-min.js#accelerometer"></script>
-	<title>Horizontally Scrolling Site from CSS-Tricks</title>
+	<title>test</title>
 	
-	<link rel="stylesheet" href="style.css">
-	
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="jquery.mousewheel.js"></script>
 	<script>
-	$(function(){
-		$("#page-wrap").wrapInner("<table cellspacing='30'><tr>");
-		$(".post").wrap("<td></td>");
-		$("body").scrollLeft(300);
-			$("body").mousewheel(function(event, delta) {
-			this.scrollLeft -= (delta * 30);
-			event.preventDefault();
-		});  
-	 
-	});
+	
 
 	
 	</script>
 	<style type="text/css">
 	#ball {
-	width: 20px;
-	height: 20px;
+	max-width: 100%;
+	max-height: 100%;
 	border-radius: 10px;
 	-webkit-radius: 10px;
-	background-color: red;
 	position:absolute;
 	top: 0px;
 	left: 0px;
 }
-
-	#page-wrap {
-	background: url(./Accelerometer_image_1.png) no-repeat scroll center top transparent;
-	}
+	
 	</style>
 </head>
 
 <body>
 
-	<div id="page-wrap">
-		
-		<div class="post">
-			
-		</div>
-		
-		<div class="post">
-		</div>
-		
-		<div class="post">
-		</div>
-		
-		<div class="post">
-		</div>
 		
 		    <div id="yes">
-        <div id="ball"></div>
-    </div>
-   
+        <div id="ball">
+        	<img src="Accelerometer_image_1.png" style='width:1000px; height:1000px'>
 	
-	</div>
+        	</div>
+  </div>
 	
 </body>
 <script>
-$('body').animate({
-        scrollTop: $(this).offset().top + $(this).height() / 2
-    }, 1000);
-    function setToCenterOfParent(element, parent, ignoreWidth, ignoreHeight){
-        parentWidth = $(parent).width();
-        parentHeight = $(parent).height();  
-        elementWidth = $(element).width();
-        elementHeight = $(element).height();
-        if(!ignoreWidth)
-            $(element).css('left', parentWidth/2 - elementWidth/2);
-        if(!ignoreHeight)
-            $(element).css('top', parentHeight/2 - elementHeight/2);
-    }
 
 /*
 Curious about the code? Great! Welcome to this code ;)
@@ -120,7 +79,6 @@ if (window.DeviceMotionEvent==undefined) {
 		vx = vx + ax;
 
 		var ball = document.getElementById("ball");
-		var pagewrap = document.getElementById("page-wrap");
 		y = parseInt(y + vy * vMultiplier);
 		x = parseInt(x + vx * vMultiplier);
 		
@@ -129,8 +87,8 @@ if (window.DeviceMotionEvent==undefined) {
 		if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
 		if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
 		
-		pagewrap.style.top = y + "px";
-		pagewrap.style.left = x + "px";
+		ball.style.top = y + "px";
+		ball.style.left = x + "px";
 	}, delay);
 } 
 
