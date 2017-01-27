@@ -63,6 +63,8 @@ var ay = 0;
 var delay = 10;
 var vMultiplier = 0.01;
 
+document.body.style.zoom="200%"
+
 if (window.DeviceMotionEvent==undefined) {
 	//document.getElementById("no").style.display="block";
 	//document.getElementById("yes").stylesheete.display="none";
@@ -87,8 +89,8 @@ if (window.DeviceMotionEvent==undefined) {
 		if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
 		if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
 		
-		ball.style.top = y + "px";
-		ball.style.left = x + "px";
+		ball.style.top = (y * 0.1) + "px";
+		ball.style.left = (x * 0.1) + "px";
 	}, delay);
 } 
 
