@@ -1,98 +1,72 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>test</title>
 
-<head>
-	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
-<script src="http://debug.phonegap.com/target/target-script-min.js#accelerometer"></script>
-	<title>test</title>
-	
+    <style type="text/css">
+      .modal {
+        position: fixed;
+        background: black;
+        opacity: 0.5;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        transform: scale(1) translateY(0);
+      }
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="jquery.mousewheel.js"></script>
-	<script>
-	
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
-	
-	</script>
-	<style type="text/css">
-	#ball {
-	max-width: 100%;
-	max-height: 100%;
-	border-radius: 10px;
-	-webkit-radius: 10px;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-}
-	
-	</style>
-</head>
+      .modal-panel {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 30px 40px rgba(44, 45, 48, 0.2);
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        max-height: 95vh;
+        padding: 16px 24px;
+        position: relative;
+      }
 
-<body>
+      .header {
+        position: fixed;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        left: 0;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        color: blue;
+      }
+    </style>
+  </head>
 
-		
-		    <div id="yes">
-        <div id="ball">
-        	<img src="Accelerometer_image_1.png" style='width:735px; height:760px'>
-	
-        	</div>
-  </div>
-	
-</body>
-<script>
-
-/*
-Curious about the code? Great! Welcome to this code ;)
-Feel free to copy and use this code
-If you are going to blog or tweet about it or if you are going to create a better
-code, please mantain the link to www.mobilexweb.com or @firt in Twitter.
-*/
-
-// Position Variables
-var x = 0;
-var y = 0;
-
-// Speed - Velocity
-var vx = 0;
-var vy = 0;
-
-// Acceleration
-var ax = 0;
-var ay = 0;
-
-var delay = 10;
-var vMultiplier = 0.01;
-
-document.body.style.zoom="180%"
-
-if (window.DeviceMotionEvent==undefined) {
-	//document.getElementById("no").style.display="block";
-	//document.getElementById("yes").stylesheete.display="none";
-
-} else {
-	window.ondevicemotion = function(event) {
-		ax = event.accelerationIncludingGravity.x;
-		ay = event.accelerationIncludingGravity.y;
-		console.log("Accelerometer data - x: " + event.accelerationIncludingGravity.x + " y: " + event.accelerationIncludingGravity.y + " z: " +event.accelerationIncludingGravity.z); 
-	}
-
-	setInterval(function() {
-		vy = vy + -(ay);
-		vx = vx + ax;
-
-		var ball = document.getElementById("ball");
-		y = parseInt(y + vy * vMultiplier);
-		x = parseInt(x + vx * vMultiplier);
-		
-		if (x<0) { x = 0; vx = 0; }
-		if (y<0) { y = 0; vy = 0; }
-		if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = 0; }
-		if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = 0; }
-		
-		ball.style.top = y  + "px";
-		ball.style.left = x  + "px";
-	}, delay);
-} 
-
-</script>
+  <body>
+		<header class="header">
+			yo
+			</header>
+			<div class="content">
+			<p>
+			test content
+			</p>
+			</div>
+			
+			<div class="modal">
+			 <p>
+			 hello
+			 </p>
+			</div>
+	</body>
 </html>
