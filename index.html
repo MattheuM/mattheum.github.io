@@ -5,6 +5,10 @@
 
     <style type="text/css">
       .modal {
+        align-items: center;
+        background: none;
+        display: -ms-flexbox;
+        display: flex;
         position: fixed;
         background: red;
         opacity: 0.5;
@@ -19,9 +23,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-				flex-direction: row;
-				background-color: green;
-				margin-top:50px;
+        flex-direction: row;
+        background-color: green;
+        margin-top: 50px;
       }
 
       .modal-panel {
@@ -34,8 +38,7 @@
         flex-flow: column;
         max-height: 95vh;
         padding: 16px 24px;
-				position: relative;
-				
+        position: relative;
       }
 
       .header {
@@ -57,19 +60,9 @@
   </head>
 
   <body>
-		<header class="header">
-			yo
-			</header>
-			<div class="content">
-			<p>
-			test content
-			</p>
-			</div>
-			
-			<div class="modal">
-			 <p>
-			 hello
-			 </p>
-			</div>
-	</body>
+    <header class="header">yo</header>
+    <div class="content"><p>test content</p></div>
+
+    <div class="modal"><p>hello</p></div>
+  </body>
 </html>
